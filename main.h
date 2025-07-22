@@ -2,11 +2,12 @@
 #define MAIN_H
 #include <stdarg.h>
 
+
 typedef struct format
 {
    char type;
    int (*f)(va_list); 
-}formats;
+}format_t;
 
 int print_char(va_list argm);
 int print_string(va_list argm);
