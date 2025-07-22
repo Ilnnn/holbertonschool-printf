@@ -1,12 +1,14 @@
 #include <stdarg.h>
 #include "main.h"
+#include <unistd.h>
+
 int _printf(const char *format, ...)
 {
     int i = 0;
     int j;
     int count = 0;
     va_list argm;
-formats form[] = {
+    format_t form[] = {
         {'c', print_char},
         {'s', print_string},
         {'%', print_percent},
@@ -26,7 +28,14 @@ formats form[] = {
                 break;
                 }
             }    
-    } 
+        }
+        else
+        {
+            write(1, &format[i], 1);
+            count++;
+        }
+ 
     }
+va_end(argm);
 return count;
 }    
