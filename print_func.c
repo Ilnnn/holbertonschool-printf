@@ -1,6 +1,9 @@
 #include <stdarg.h>
-#include <unistd.h>
 #include "main.h"
+#include <string.h>
+#include <unistd.h>
+
+
 
 int print_char(va_list argm)
 {
@@ -11,7 +14,7 @@ int print_char(va_list argm)
 int print_string(va_list argm)
 {
     char *s = va_arg(argm, char*);
-    return write (1,s,1);
+    return write (1,s, strlen(s));
 }
 
 int print_percent(va_list argm)
