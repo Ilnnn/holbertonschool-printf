@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_int(va_list args)
+int handle_spec(va_list args)
 {
 	int n = va_arg(args, int);
 	int num = n;
@@ -31,6 +31,9 @@ int print_int(va_list args)
 			exp /= 10;
 		}
 	
-}
+
+
+	{
 		return count;
-}
+	}
+}	
