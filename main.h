@@ -19,4 +19,5 @@ int handle_spec(va_list args);
 int _putchar(char c);
 
 int _printf(const char *format, ...);
+int get_type_func(char c, va_list argm);
 #endif
