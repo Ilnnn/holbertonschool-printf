@@ -31,5 +31,3 @@ int get_type_func(char c, va_list argm)
 	return (2);
 
 }
-
-
