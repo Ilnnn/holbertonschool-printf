@@ -29,9 +29,9 @@ The `_printf` function is designed to run in a **Linux environment** with **GCC*
 
 Make sure all required `.c` and `.h` files are in the same directory. Then compile the code with:
 
-```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
 ```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
+
 🔧 Supported Format Specifiers
 
 Specifier	Description	Example
