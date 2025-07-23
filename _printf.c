@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
     while (format[i] != '\0')
     {
      if (format[i] == '%')
-        {
+    {
         i++;
         for (j = 0; form[j].type != '\0'; j++)
         {
@@ -35,7 +35,8 @@ int _printf(const char *format, ...)
             write(1, &format[i], 1);
             count++;
         }
- 
+        
+        i++;
     }
 va_end(argm);
 return count;
