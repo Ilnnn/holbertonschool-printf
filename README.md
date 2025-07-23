@@ -1,92 +1,104 @@
-📄 README – Custom _printf Function in C
+🚀 **Description**
 
-🧩 Objective
+`_printf` is a custom implementation of the C standard library function `printf`.
 
-This project implements a simplified version of the standard C printf function, called _printf, which handles a limited set of format specifiers (%c, %s, %d, %i, %%).
+This project is part of the Holberton School curriculum and focuses on core C programming concepts such as:
 
-The core functions are:
+- Variadic functions
+- Format specifiers
+- Function pointers and dispatch tables
+- Output to standard output using low-level functions (`write`)
 
-_printf() – the main formatted output function
-handle_spec() – handles printing integers for %d and %i
-🗃️ File Structure
+The `_printf` function is designed to run in a **Linux environment** with **GCC** on **Ubuntu 20.04**.
 
-File	           Purpose
+---
 
-main.h	              Contains function prototypes and the format_t struct
-_printf.c	       Implements the _printf function
-handle_spec.c	   Contains handle_spec, which prints integers
-_putchar.c	       Implements _putchar, a wrapper around write()
-main.c	           Test file
+🛠️ **Requirements**
 
-🧠 Code Design
+- Ubuntu 20.04 LTS
+- GCC compiler with the following flags:
 
-format_t structure
-typedef struct format
+- -Wall -Werror -Wextra -pedantic -std=gnu89
 
-{
-    char type;
-    int (*f)(va_list);
-} format_t;
+- Git for version control
+- Basic understanding of variadic functions and function pointers in C
 
-This structure links a format specifier (like 'c') to the corresponding handler function.
+---
 
-✅ Supported Format Specifiers
+📦 **Compilation**
 
-Specifier	Description	Handler Function
-%c	Character	print_char
-%s	String	print_string
-%d	Integer	handle_spec
-%i	Integer	handle_spec
-%%	Percent sign	print_percent
-⚙️ Compilation
+Make sure all required `.c` and `.h` files are in the same directory. Then compile the code with:
 
-Use gcc to compile the files:
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
 
-```gcc -Wall -Werror -Wextra -pedantic _printf.c handle_spec.c _putchar.c main.c -o my_printf```
-📥 Example main.c
+🔧 Supported Format Specifiers
+
+Specifier	Description	Example
+%c	Prints a single character	_printf("%c", 'H');
+%s	Prints a string	_printf("%s", "Hello");
+%d	Prints a signed decimal integer	_printf("%d", -123);
+%i	Prints a signed decimal integer (same as %d)	_printf("%i", 456);
+%%	Prints a literal percent sign	_printf("%%");
+
+_printf("Hello, World!\n");
+// Output: Hello, World!
+
+Using format specifiers
+_printf("Char: %c\n", 'A');
+// Output: Char: A
+
+_printf("String: %s\n", "Sample");
+// Output: String: Sample
+
+_printf("Int: %d\n", 100);
+// Output: Int: 100
+
+_printf("Percent: %%\n");
+// Output: Percent: %
+
+📂 Files
+
+File	Description
+main.h	Header file containing all function prototypes and type definitions
+_printf.c	Core logic of the _printf function with format parsing
+handle_spec.c	Function for handling %d and %i integer format specifiers
+print_char.c	Function to print characters
+print_string.c	Function to print strings
+utils.c	Utility functions such as _putchar
+man_3_printf	Manual page for _printf usage
+
+📖 Man Page
+
+A man page is provided to describe the _printf function.
+
+To open it:
+
+man ./man_3_printf
+It includes:
+
+NAME
+SYNOPSIS
+DESCRIPTION
+USAGE EXAMPLES
+RETURN VALUE
+
+✅ Testing
+
+Create a test file main.c to test your _printf function:
 
 #include "main.h"
 
 int main(void)
 {
-    _printf("Char: %c\n", 'A');
-    _printf("String: %s\n", "Hello");
-    _printf("Integer: %d\n", 1234);
-    _printf("Negative: %i\n", -567);
-    _printf("Percent: %%\n");
-    return 0;
+    _printf("Test char: %c\n", 'X');
+    _printf("Test string: %s\n", "Hello");
+    _printf("Test int: %d\n", 123);
+    _printf("Test percent: %%\n");
+    return (0);
 }
+Compile and run:
 
-🧪 Expected Output
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o test
+./test
 
-Char: A
-String: Hello
-Integer: 1234
-Negative: -567
-Percent: %
-🛠️ Possible Improvements
-
-Add support for more specifiers (%u, %x, %X, %o, etc.)
-Implement field width, precision, and flag handling
-Add a Makefile for easier compilation
-🧵 Sample main.h
-
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdarg.h>
-
-int _printf(const char *format, ...);
-int print_char(va_list args);
-int print_string(va_list args);
-int print_percent(va_list args);
-int handle_spec(va_list args);
-int _putchar(char c);
-
-typedef struct format
-{
-    char type;
-    int (*f)(va_list);
-} format_t;
-
-#endif
