@@ -67,13 +67,13 @@ _printf("Percent: %%\n");
 ```
 File	            Description
 
-main.h	            Header file containing all function prototypes and type definitions
-_printf.c	        Core logic of the _printf function with format parsing
-handle_spec.c	    Function for handling %d and %i integer format specifiers
-print_char.c	    Function to print characters
-print_string.c	    Function to print strings
-utils.c	Utility     functions such as _putchar
-man_3_printf	    Manual page for _printf usage
+main.h	             Header file containing all function prototypes and type definitions
+_printf.c            Core logic of the _printf function with format parsing
+handle_spec.c	     Function for handling %d and %i integer format specifiers
+print_char.c	     Function to print characters
+print_string.c	     Function to print strings
+utils.c	Utility      Functions such as _putchar
+man_3_printf	     Manual page for _printf usage
 ```
 📖 Man Page
 
