@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
         {'c', print_char},
         {'s', print_string},
         {'%', print_percent},
+	{'d', handle_spec},
+        {'i', handle_spec},
         {'\0', NULL}
     };
     va_start(argm, format);
@@ -28,7 +30,13 @@ int _printf(const char *format, ...)
                 count += form[j].f(argm);
                 break;
                 }
-            }    
+            }
+	       if (form[j].type == '\0')
+            {
+                write(1,"%",1);
+                write(1,&format[i],1);
+                count+=2;
+            }
         }
         else
         {
