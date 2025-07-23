@@ -10,20 +10,24 @@ _printf() – the main formatted output function
 handle_spec() – handles printing integers for %d and %i
 🗃️ File Structure
 
-File	Purpose
-main.h	Contains function prototypes and the format_t struct
-_printf.c	Implements the _printf function
-handle_spec.c	Contains handle_spec, which prints integers
-_putchar.c	Implements _putchar, a wrapper around write()
-main.c	Test file
+File	           Purpose
+
+main.h	              Contains function prototypes and the format_t struct
+_printf.c	       Implements the _printf function
+handle_spec.c	   Contains handle_spec, which prints integers
+_putchar.c	       Implements _putchar, a wrapper around write()
+main.c	           Test file
+
 🧠 Code Design
 
 format_t structure
 typedef struct format
+
 {
     char type;
     int (*f)(va_list);
 } format_t;
+
 This structure links a format specifier (like 'c') to the corresponding handler function.
 
 ✅ Supported Format Specifiers
@@ -38,7 +42,7 @@ Specifier	Description	Handler Function
 
 Use gcc to compile the files:
 
-gcc -Wall -Werror -Wextra -pedantic _printf.c handle_spec.c _putchar.c main.c -o my_printf
+```gcc -Wall -Werror -Wextra -pedantic _printf.c handle_spec.c _putchar.c main.c -o my_printf```
 📥 Example main.c
 
 #include "main.h"
