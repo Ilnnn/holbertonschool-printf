@@ -31,7 +31,7 @@ Make sure all required `.c` and `.h` files are in the same directory. Then compi
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
-
+```
 🔧 Supported Format Specifiers
 
 Specifier	Description	Example
@@ -41,6 +41,8 @@ Specifier	Description	Example
 %i	Prints a signed decimal integer (same as %d)	_printf("%i", 456);
 %%	Prints a literal percent sign	_printf("%%");
 
+
+```
 _printf("Hello, World!\n");
 // Output: Hello, World!
 
@@ -54,9 +56,11 @@ _printf("String: %s\n", "Sample");
 _printf("Int: %d\n", 100);
 // Output: Int: 100
 
+```
+
 _printf("Percent: %%\n");
 // Output: Percent: %
-
+```
 📂 Files
 
 File	            Description
@@ -74,10 +78,10 @@ man_3_printf	    Manual page for _printf usage
 A man page is provided to describe the _printf function.
 
 To open it:
-
+```
 man ./man_3_printf
 It includes:
-
+```
 NAME
 SYNOPSIS
 DESCRIPTION
@@ -87,7 +91,7 @@ RETURN VALUE
 ✅ Testing
 
 Create a test file main.c to test your _printf function:
-
+```
 #include "main.h"
 
 int main(void)
@@ -98,9 +102,11 @@ int main(void)
     _printf("Test percent: %%\n");
     return (0);
 }
+```
 Compile and run:
-
+```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o test
-
+```
+```
 ./test
-
+```
