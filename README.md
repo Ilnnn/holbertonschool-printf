@@ -32,7 +32,9 @@ Make sure all required `.c` and `.h` files are in the same directory. Then compi
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
 ```
+
 🔧 Supported Format Specifiers
+
 
 Specifier	                    Description	                                      Example
 %c	                      Prints a single character	                              _printf("%c", 'H');
@@ -62,7 +64,7 @@ _printf("Percent: %%\n");
 // Output: Percent: %
 
 📂 Files
-
+```
 File	            Description
 
 main.h	            Header file containing all function prototypes and type definitions
@@ -72,7 +74,7 @@ print_char.c	    Function to print characters
 print_string.c	    Function to print strings
 utils.c	Utility     functions such as _putchar
 man_3_printf	    Manual page for _printf usage
-
+```
 📖 Man Page
 
 A man page is provided to describe the _printf function.
