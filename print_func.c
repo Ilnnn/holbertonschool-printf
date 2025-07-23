@@ -21,4 +21,4 @@ int print_percent(va_list argm)
 {
     (void)argm;
     return write(1,"%",1);
-
+}
