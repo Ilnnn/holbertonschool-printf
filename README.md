@@ -31,15 +31,15 @@ Make sure all required `.c` and `.h` files are in the same directory. Then compi
 
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf
-
+```
 🔧 Supported Format Specifiers
 
-Specifier	Description	Example
-%c	Prints a single character	_printf("%c", 'H');
-%s	Prints a string	_printf("%s", "Hello");
-%d	Prints a signed decimal integer	_printf("%d", -123);
-%i	Prints a signed decimal integer (same as %d)	_printf("%i", 456);
-%%	Prints a literal percent sign	_printf("%%");
+Specifier	                    Description	                                      Example
+%c	                      Prints a single character	                              _printf("%c", 'H');
+%s	                      Prints a string	_printf                               ("%s", "Hello");
+%d	                      Prints a signed decimal integer	                      _printf("%d", -123);
+%i	                      Prints a signed decimal integer (same as %d)	          _printf("%i", 456);
+%%	                      Prints a literal percent sign	                          _printf("%%");
 
 
 ```
@@ -60,7 +60,7 @@ _printf("Int: %d\n", 100);
 
 _printf("Percent: %%\n");
 // Output: Percent: %
-```
+
 📂 Files
 
 File	            Description
