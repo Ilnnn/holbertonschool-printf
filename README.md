@@ -98,7 +98,6 @@ Create a test file main.c to test your _printf function:
 #include "main.h"
 
 int main(void)
-{<img width="1115" height="724" alt="Capture d’écran 2025-07-24 à 11 45 18" src="https://github.com/user-attachments/assets/1df048dd-c569-4e77-a744-7ae517152543" />
 
     _printf("Test char: %c\n", 'X');
     _printf("Test string: %s\n", "Hello");
@@ -115,3 +114,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o test
 ./test
 ```
 
+
+
+<img width="1110" height="723" alt="Capture d’écran 2025-07-24 à 11 48 06" src="https://github.com/user-attachments/assets/1cbf5a95-7260-4d30-ab45-80a43d57fb37" />
