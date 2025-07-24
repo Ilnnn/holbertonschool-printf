@@ -22,7 +22,7 @@ int handle_spec(va_list args)
 		{
 			num = n;
 		}
-	while (num / exp >= 10)
+		while (num / exp >= 10)
 		exp *= 10;
 
 		while (exp > 0)
