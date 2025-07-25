@@ -8,20 +8,19 @@
 int handle_spec(va_list args)
 {
 	int n = va_arg(args, int);
-	int num = n;
+	unsigned int num;
 	int count = 0;
 	int exp = 1;
 	int digit;
 
-		if(n == INT_MIN)
+		if (n == INT_MIN)
 		{
-			_putchar('_');
-			_putchar('2');
-			count += 2;
-			num = 147483648;
+			_putchar('-');
+			count++;
+			num = 2147483648U;
 		}
 
-		if (n < 0)
+		else if (n < 0)
 		{
 			_putchar('-');
 			num = -n;
