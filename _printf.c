@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 		i++;
+		if (format[i] == '\0')
+			break;
 		count += get_type_func(format[i], argm);
 		}
 		else
