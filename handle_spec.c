@@ -12,6 +12,14 @@ int handle_spec(va_list args)
 	int exp = 1;
 	int digit;
 
+		if(n == INT_MIN)
+		{
+			_putchar('_');
+			_putchar('2');
+			count += 2;
+			num = 147483648;
+		}
+
 		if (n < 0)
 		{
 			_putchar('-');
