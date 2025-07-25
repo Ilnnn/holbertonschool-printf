@@ -23,6 +23,8 @@
 	{
 	char *s = va_arg(argm, char*);
 
+	if (s == NULL)
+	s = "(null)";
 	return (write(1, s, strlen(s)));
 	}
 
