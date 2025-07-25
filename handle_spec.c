@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * handle_spec - Prints an integer from the argument list.
  * @args: List of arguments.
